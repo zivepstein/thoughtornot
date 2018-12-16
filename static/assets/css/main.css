@@ -176,6 +176,7 @@ input, select, textarea {
 	p {
 		margin: 0 0 2rem 0;
 		color:black;
+		font-weight: 900;
 
 	}
 
@@ -1148,6 +1149,26 @@ input, select, textarea {
 			background-repeat: no-repeat;
 			z-index: 1;
 		}
+
+		/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+#bg:after {
+			-moz-transform: scale(1.125);
+			-webkit-transform: scale(1.125);
+			-ms-transform: scale(1.125);
+			transform: scale(1.125);
+			-moz-transition: -moz-transform 0.325s ease-in-out, -moz-filter 0.325s ease-in-out;
+			-webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out;
+			-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out;
+			transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
+			background-image: url("../../bg_smartphone.png");
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			z-index: 1;
+		}
+}
+
 
 		body.is-article-visible #bg:after {
 			-moz-transform: scale(1.0825);
