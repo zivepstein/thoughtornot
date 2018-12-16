@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<!--
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Thought or not</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href= "{{ url_for('static', filename='assets/css/main.css')}}" />
+		<noscript><link rel="stylesheet" href="{{ url_for('static', filename='assets/css/noscript.css')}}" /></noscript>
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   <script type="text/javascript">
+      google.charts.load('current', {'packages':['gauge']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Label', 'Value'],
+          ['Survey', 80],
+          ['Twitter', 55],
+        ]);
+
+        var options = {
+          width: 400, height: 120,
+          redFrom: 75, redTo: 100,
+          yellowFrom:50, yellowTo: 75,
+          minorTicks: 5
+        };
+
+        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+
+        var survey_val = '{{ correct_p}}';
+        var twitter_val = '{{ twitter_score }}';
+ 
+        var spipe = parseFloat(survey_val);
+        var tpipe = parseFloat(twitter_val);
+
+
+
+
+        chart.draw(data, options);
+         data.setValue(0, 1, spipe*100 );
+          chart.draw(data, options);
+          data.setValue(1, 1, tpipe*100 );
+          chart.draw(data, options);
+
+      }
+    </script>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<span style = "font-size:60px;"><a href = "/" style = "border-bottom: none">🧠</a></span>
+						</div>
+						<div class="content">
+							<div class="inner">
+							
+    <h1>Results:</h1>
+    <p style = "font-weight: 900">On the survey, you got {{ ncorrect }}/7 of the questions correct. </p>
+    <p style = "font-weight: 900">For twitter user {{ screen_name }}, their content is {{twitter_score *100}}% thoughtful.</p>
+     <div id="chart_div" style="width: 240px; height: 120px; margin-left: 30%;"></div>
+     <br>
+	<ul class="actions" style = "margin-left: 5%">
+										<li><a href="#" class="button primary">Share your results on twitter</a></li>
+										<li><a href="/" class="button">Return home</a></li>
+									</ul>
+							
+						</div>
+					
+					</header>
+
+				<!-- Main -->
+					
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; Applied Cooperation Team.</p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="{{ url_for('static', filename='assets/js/jquery.min.js')}}"></script>
+			<script src="{{ url_for('static', filename='assets/js/browser.min.js')}}"></script>
+			<script src="{{ url_for('static', filename='assets/js/breakpoints.min.js')}}"></script>
+			<script src="{{ url_for('static', filename='assets/js/util.js')}}"></script>
+			<script src="{{ url_for('static', filename='assets/js/main.js')}}"></script>
+			 
+
+	</body>
+</html>

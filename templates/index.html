@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<!--
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Thought or not</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href= "{{ url_for('static', filename='assets/css/main.css')}}" />
+		<noscript><link rel="stylesheet" href="{{ url_for('static', filename='assets/css/noscript.css')}}" /></noscript>
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<span style = "font-size:60px;">🧠</span>
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h1 style= "color:#F497B4">Thought or not</h1>
+								<p style = "font-weight: 900">Explore your cognition on social media</p>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="#test">Take the test</a></li>
+								<li><a href="#about">Learn more</a></li>
+								<li><a href="#read">Read the paper</a></li>
+								<!--<li><a href="#elements">Elements</a></li>-->
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						
+						<!-- About -->
+					
+
+
+						<!-- Elements -->
+							<article id="test">
+									
+								
+								<section>
+
+									{% from "_formhelpers.html" import render_field %}
+									<form method=post>
+									  <dl>
+									    {{ render_field(form.ages) }}
+									    {{ render_field(form.printers) }}
+									    {{ render_field(form.bread) }}
+									    {{ render_field(form.race) }}
+									    {{ render_field(form.sheeps) }}
+									    {{ render_field(form.hole) }}
+									    {{ render_field(form.daughters) }}
+									    {{ render_field(form.count) }}
+									    {{ render_field(form.twitter) }}
+
+									  </dl>
+									  <p><input type=submit value="See the results">
+									</form>
+								</section>
+
+							</article>
+
+							<article id="about">
+								<h2 class="major">About</h2>
+								<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
+								<p>Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices. Aliquam libero et malesuada fames ac ante ipsum primis in faucibus. Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit amet.</p>
+
+								<h2 class="major">Team</h2>
+								<p>Thought or not was built by...</p>
+								<h2 class="major">Contact</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<label for="name">Name</label>
+											<input type="text" name="name" id="name" />
+										</div>
+										<div class="field half">
+											<label for="email">Email</label>
+											<input type="text" name="email" id="email" />
+										</div>
+										<div class="field">
+											<label for="message">Message</label>
+											<textarea name="message" id="message" rows="4"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" class="primary" /></li>
+										<li><input type="reset" value="Reset" /></li>
+									</ul>
+								</form>
+								<ul class="icons">
+									<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</article>
+
+							<!-- Work -->
+							<article id="read">
+								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
+								<p>Check out our paper to learn more 📚</p>
+							</article>
+
+
+							<article id="results">
+								<h2 class="major">Results</h2>
+								<h3>Questionaire 📝</h4>
+									<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
+									<ul class="alt">
+										<li>You answered 85% of questions correctly!</li>
+										<li>Thats better than 18% of people.</li>
+									</ul>
+									<h3>Twitter data <a class="icon fa-twitter"></a></h4>
+										<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
+									<ul class="alt">
+										<li>According to twitter, you have a thoughtfullness score of 82%</li>
+										<li>Thats better than 22% of people.</li>
+									</ul>
+									<h3>Share these results on social media!</h4>
+									<ul class="icons">
+									<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</article>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; Applied Cooperation Team.</p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="{{ url_for('static', filename='assets/js/jquery.min.js')}}"></script>
+			<script src="{{ url_for('static', filename='assets/js/browser.min.js')}}"></script>
+			<script src="{{ url_for('static', filename='assets/js/breakpoints.min.js')}}"></script>
+			<script src="{{ url_for('static', filename='assets/js/util.js')}}"></script>
+			<script src="{{ url_for('static', filename='assets/js/main.js')}}"></script>
+			 
+
+	</body>
+</html>

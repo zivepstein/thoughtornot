@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+{% from "_formhelpers.html" import render_field %}
+<form method=post>
+  <dl>
+    {{ render_field(form.ages) }}
+    {{ render_field(form.printers) }}
+    {{ render_field(form.bread) }}
+    {{ render_field(form.race) }}
+    {{ render_field(form.sheeps) }}
+    {{ render_field(form.hole) }}
+    {{ render_field(form.daughters) }}
+    {{ render_field(form.count) }}
+    {{ render_field(form.twitter) }}
+
+  </dl>
+  <p><input type=submit value="See the results">
+</form>
+{% endblock %}

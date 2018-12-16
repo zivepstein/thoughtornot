@@ -1,0 +1,20 @@
+
+
+
+<html>
+  <head>
+    {% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>{% block title %}{% endblock %} - My Webpage</title>
+    {% endblock %}
+  </head>
+  <body>
+  	<div>
+    Microblog:
+    <a href="/">Home</a>
+    <a href="/survey">Take the survey</a>
+</div>
+    <div id="content">{% block content %}{% endblock %}</div>
+    
+  </body>
+</html>
